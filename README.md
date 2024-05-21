@@ -1,7 +1,7 @@
 # Deep Learning 
 ## Preprocess the Data
 
-Data Preprocessing: Upload the starter file to Google Colab.
+Upload the starter file to Google Colab.
 
 Read in the charity_data.csv to a Pandas DataFrame.
 
