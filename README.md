@@ -39,19 +39,64 @@ Create a new neural network model, implementing at least 3 model optimization me
 Save and export your results to an HDF5 file named AlphabetSoupCharity_Optimization.h5
 
 
-## Write a Report on the Neural Network Model
+# Analysis Report
+Report on the Performance of Deep Learning Models for Alphabet Soup
 
-Write an analysis that includes a title and multiple sections, labeled with headers and sub headers 
 
-Format images in the report so that they display correction 
+## Overview
+The objective of the deep learning model is to select funding applicants with the highest probability of success, aiming for
+an accuracy rate of 75% or higher.
 
-Explain the purpose of the analysis 
 
-Answer all 6 questions in the results section 
+## Data Preprocessing
+Target Variable: 'IS_SUCCESSFUL' column from application_df.
+    
+Feature Variables: 'SPECIAL_CONSIDERATIONS', 'APPLICATION_TYPE', 'AFFILIATION', 'CLASSIFICATION', 'USE_CASE', 
+                        'ORGANIZATION','INCOME_AMT'.
+        
+Removed Variables: 'EIN' and 'NAME' columns due to their lack of relevance.
 
-Summarize the overall results of your model
+    
+## Model Architecture and Performance
 
-Describe how you could use a different model to solve the same problem, and explain why you would use that model
+| Model Attempt                              | Model Parameters                                            | Accuracy | Loss  |
+|--------------------------------------------|-------------------------------------------------------------|----------|-------|
+| Attempt 1 (AlphabetSoupCharity)            | 80 nodes in layer 1, 30 nodes in layer 2                   | 73.24%   | 55.06%|
+| Attempt 2 (AlphabetSoupCharity2_Optimization) | 40 nodes in layer 1, 15 nodes in layer 2                | 72.26%   | 55.81%|
+| Attempt 3 (AlphabetSoupCharity1_Optimization) | 12 nodes in layer 1, 8 nodes in layer 2, 4 nodes in layer 3 | 73.24%   | 55.46%|
+
+
+#### Attempt 1:(AlphabetSoupCharity): Model Parameters: 80 hidden nodes in layer 1, 30 hidden nodes in layer 2.
+Result: Accuracy: 73.24%, Loss: 55.06%.
+
+#### Attempt 2:(AlphabetSoupCharity2_Optimization)
+Model Parameters: Reduced hidden nodes to half of Attempt 1 (40 in layer 1, 15 in layer 2).
+Result: Accuracy: 72.26%, Loss: 55.81%.
+
+#### Attempt 3:(AlphabetSoupCharity1_Optimization)
+Model Parameters: Implemented 3 layers, used ReLU activation in the second layer, with 12 hidden nodes in layer 1, 8 in layer 2, and 4 in layer 3.Result: Accuracy: 73.24%, Loss: 55.46%.
+            
+
+## Achievement of Target Performance
+The target accuracy of 75% was not achieved with any of the attempts.
+
+
+## Steps for Performance Improvement
+To enhance model performance, the following steps were taken:
+
+Increased the number of layers.
+
+Added additional hidden nodes.
+
+Adjusted activation functions.
+
+
+## Summary
+The deep learning model achieved an accuracy of approximately 73% in predicting successful applicants for funding. 
+To further improve accuracy, additional data cleanup and experimentation with different model architectures and 
+activation functions are recommended.
+
+
 
 
 ## Resources used 
